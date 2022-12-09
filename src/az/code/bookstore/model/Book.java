@@ -63,12 +63,30 @@ public class Book {
     }
 
     public String getDetails(){
-        return "Əsər: " + name + "\n"
+        var bookDetails =  "Əsər: " + name + "\n"
                 + "Müəllif: " + authorName + "\n"
                 + "Nəşr ili: " + publishedYear + "\n"
-                + "Səhifə sayı: " + pageCount + "\n" +
-                "--------------------------------";
+                + "Səhifə sayı: " + pageCount + "\n"+
+                "Units: \n";
+
+        for(Unit unit: units){
+            bookDetails += "      " + unit;
+        }
+        return bookDetails;
      }
+
+     private int getSumUnit(){
+        int sum = 0;
+        for (Unit unit : units){
+            sum=sum+unit.getPageCount();
+        }
+        return sum;
+     }
+
+    public boolean isValidPageCount(){
+            return pageCount == getSumUnit();
+    }
+
 
     @Override
     public String toString() {

@@ -40,10 +40,8 @@ public class Unit {
 
     @Override
     public String toString() {
-        return "Unit{" +
-                "header='" + header + '\'' +
-                ", pageCount=" + pageCount +
-                ", body='" + body + '\'' +
-                '}';
+         return "header= " + header + " " +
+                "pageCount= " + pageCount + " " +
+                "body= " + body + " \n";
     }
 }
